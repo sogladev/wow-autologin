@@ -66,7 +66,7 @@ pub fn write_realmlist(
     realmlist: &str,
 ) -> std::io::Result<()> {
     let realmlist_path = game_folder.join(rel_path);
-    let realmlist_fmt = format!("set realmlist to {}", realmlist);
+    let realmlist_fmt = format!("set realmlist {}", realmlist);
     std::fs::write(&realmlist_path, &realmlist_fmt).map_err(|e| {
         eprintln!(
             "Realmlist not writable, check path: {}",
